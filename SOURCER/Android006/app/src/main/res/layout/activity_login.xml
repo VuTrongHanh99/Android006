@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2E255"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_weight="3"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:src="@drawable/img_logo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="6"
+        android:orientation="vertical"
+        tools:ignore="Suspicious0dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:layout_weight="6"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="Đăng nhập"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="#050505"></View>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xin chào"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"
+                android:textSize="30dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="Đăng nhập bằng số điện thoại"
+            android:textSize="24sp" />
+        <EditText
+            android:id="@+id/edt_number_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:padding="10dp"
+            android:inputType="number"
+            android:background="@drawable/gray_round_bg"
+            android:hint="Nhập số điện thoại"/>
+        <RelativeLayout
+            android:id="@+id/rl_login_button"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/login_button_selector">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Đăng nhập"
+                android:textSize="24sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+            <View
+                android:layout_width="100dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_height="1dp"
+                android:background="#1D1C1C"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hình thức đăng nhập khác"
+                android:textSize="20sp" />
+            <View
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="#000"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/img_fb_login"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_fb" />
+            <ImageView
+                android:id="@+id/img_gg_login"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_gg"
+                android:scaleX="0.8"
+                android:scaleY="0.8"/>
+        </LinearLayout>
+    </LinearLayout>>
+</LinearLayout>
