@@ -3,51 +3,40 @@ package com.example.android006;
 import java.io.Serializable;
 
 public class UserAccount implements Serializable {
-
-    private String userName;
-    private String userType;
-
+    private String imgNews,txtNews;
     private boolean active;
-
-    public UserAccount(String userName, String userType)  {
-        this.userName= userName;
-        this.userType = userType;
-        this.active= true;
+    public UserAccount( String imgNews, String txtNews ) {
+        this.imgNews = imgNews;
+        this.txtNews = txtNews;
+    }
+    public UserAccount( String imgNews, String txtNews, boolean active ) {
+        this.imgNews = imgNews;
+        this.txtNews = txtNews;
+        this.active = active;
     }
 
-    public UserAccount(String userName, String userType, boolean active)  {
-        this.userName= userName;
-        this.userType = userType;
-        this.active= active;
+    public String getImgNews() {
+        return imgNews;
     }
 
-    public String getUserType() {
-        return userType;
+    public void setImgNews( String imgNews ) {
+        this.imgNews = imgNews;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public String getTxtNews() {
+        return txtNews;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setTxtNews( String txtNews ) {
+        this.txtNews = txtNews;
     }
 
     public boolean isActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive( boolean active ) {
         this.active = active;
-    }
-
-    @Override
-    public String toString() {
-        return this.userName +" ("+ this.userType+")";
     }
 
 }

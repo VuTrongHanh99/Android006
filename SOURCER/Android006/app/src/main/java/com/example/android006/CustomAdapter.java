@@ -6,7 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -30,10 +33,9 @@ public class CustomAdapter  extends RecyclerView.Adapter<CustomAdapter.ViewHolde
     @Override
     public void onBindViewHolder( @NonNull ViewHolder viewHolder, int i ) {
 
-        viewHolder.txtName.setText( userAccounts.get( i ).getUserName() );
-        viewHolder.txtType.setText( userAccounts.get( i ).getUserType() );
+        Picasso.get().load( userAccounts.get( i ).getImgNews()).into( viewHolder.imgNews );
+        viewHolder.txtNews.setText( userAccounts.get( i ).getTxtNews() );
     }
-
     @Override
     public int getItemCount() {
         return userAccounts.size();
@@ -41,11 +43,12 @@ public class CustomAdapter  extends RecyclerView.Adapter<CustomAdapter.ViewHolde
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView txtName,txtType;
+        TextView txtNews;
+        ImageView imgNews;
         public ViewHolder( @NonNull View itemView ) {
             super( itemView );
-            txtName=itemView.findViewById( R.id.txtName );
-            txtType=itemView.findViewById( R.id.txtType );
+            txtNews=itemView.findViewById( R.id.text_news );
+            imgNews=itemView.findViewById( R.id.img_news );
         }
     }
 

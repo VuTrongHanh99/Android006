@@ -54,9 +54,9 @@ public class DataNewsAddapter extends BaseAdapter{
         else {
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        viewHolder.txtTitle.setText(dataNews.title);
+        viewHolder.txtTitle.setText(dataNews.getTitle());
         //load anhr ve icon
-        Picasso.get().load(dataNews.urlImg).into(viewHolder.imgNews);
+        Picasso.get().load(dataNews.getUrlImg()).into(viewHolder.imgNews);
         //Picasso.with(context).load("http://openweathermap.org/img/w/"+thoiTietNgay.image+".png").into(viewHolder.imageStatus);
         return convertView;
 
