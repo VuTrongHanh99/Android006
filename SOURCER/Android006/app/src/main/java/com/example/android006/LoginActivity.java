@@ -33,10 +33,9 @@ public class LoginActivity extends AppCompatActivity {
                     // tạo đối tượng intent
                     Intent intent=new Intent( LoginActivity.this,MainActivity.class );
                     User user=new User();
-                    user.setId(1);
-                    user.setPhoneNumber("+84123456789");
-                    user.setUserName("Vu Trong Hanh01");
-                    user.setProfileUrl("https://photos.google.com/photo/AF1QipOuiDm30QTjDXk98Q7DtrnHCNbedRm5z62Nv2HY");
+                    //luu so dien thoai vao
+                    AppConfig.setPhoneNumber(edtPhoneNumber.getText().toString(),LoginActivity.this);
+
                     startActivity(intent);
                     finish();
                 }else {

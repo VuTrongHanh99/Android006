@@ -1,3 +1,279 @@
-<LinearLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"></LinearLayout>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#F0F0A8"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="4"
+            android:scaleType="centerCrop" />
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vũ Trọng Hạnh"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
+            <TextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="+84123456789"/>
+            <TextView
+                android:id="@+id/tv_edit"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="6dp"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="SỬA THÔNG TIN"
+                android:textStyle="bold"
+                android:background="@drawable/vang_round_bg"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--layout thong tin-->
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="3"
+        android:background="#fff"
+        android:layout_marginHorizontal="25dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/img_lich_su"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    />
+                <TextView
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:text="Lịch sử giao dịch"
+                    android:textSize="20sp" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/ic_next"
+                    android:layout_alignParentRight="true"
+
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="40dp"
+            android:background="#000"></View>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/img_hoi_dap"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="60dp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:text="Hỏi đáp"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_next" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="40dp"
+            android:background="#000"></View>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/img_huong_dan"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="60dp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:text="Hướng dẫn sử dụng"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/ic_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="40dp"
+            android:background="#000"></View>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/img_dang_xuat"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="60dp"
+                    android:padding="10dp"
+                    android:text="Đăng xuất"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:src="@mipmap/ic_next"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--layout thong tin-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <com.kofigyan.stateprogressbar.StateProgressBar
+            android:id="@+id/your_state_progress_bar_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:spb_animateToCurrentProgressState="true"
+            app:spb_checkStateCompleted="true"
+            app:spb_currentStateDescriptionColor="#DB0082"
+            app:spb_currentStateNumber="two"
+            app:spb_maxStateNumber="four"
+            app:spb_stateBackgroundColor="#BDBDBD"
+            app:spb_stateDescriptionColor="#808080"
+            app:spb_stateForegroundColor="#DB0082"
+            app:spb_stateNumberBackgroundColor="#808080"
+            app:spb_stateNumberForegroundColor="#eeeeee" />
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_click"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="Click"
+            android:textSize="24sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:text="Thành viên"
+            android:textColor="#31D11F"
+            android:textSize="32dp"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            android:text="Chào mừng bạn đã là thành viên của deckko \n tích điểm để lên hạng cào hơn \n và có quyền lời hơn"/>
+    </LinearLayout>
+</LinearLayout>
