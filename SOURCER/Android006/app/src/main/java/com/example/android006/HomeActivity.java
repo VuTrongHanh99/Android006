@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 //        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 //        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 //        recyclerView.setLayoutManager(layoutManager);
-        listView = (ListView)findViewById(R.id.listview);
+        listView = (ListView)findViewById(R.id.list_view);
         UserAccount tom = new UserAccount("Tom","admin");
         UserAccount jerry = new UserAccount("Jerry","user");
         UserAccount donald = new UserAccount("Donald","guest", false);
