@@ -20,13 +20,15 @@
             android:id="@+id/text_news"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="15dp"
-            android:layout_width="120dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:fontFamily="@font/roboto_regular"
-            android:gravity="center_vertical"
+            android:gravity="clip_vertical"
             android:text="Tille"
-            android:textColor="#DB1E1E"
-            android:textSize="20dp" />
+            android:background="#9C9C98"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btn_chitiet_news"

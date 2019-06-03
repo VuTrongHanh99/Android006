@@ -19,6 +19,9 @@ public class AppConfig {
         SharedPreferences sharedPreferences=context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
         return sharedPreferences.getString("phone_number",null);
     }
+    public static void dangXuat(){
+
+    }
 
 }
 
