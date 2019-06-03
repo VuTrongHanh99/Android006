@@ -1,10 +1,11 @@
-package com.example.android006;
+package com.example.android006.Main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.android006.R;
 import com.kofigyan.stateprogressbar.StateProgressBar;
 import com.squareup.picasso.Picasso;
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView( R.layout.activity_main);
         final StateProgressBar stateProgressBar = (StateProgressBar) findViewById(R.id.your_state_progress_bar_id);
         stateProgressBar.setStateDescriptionData(descriptionData);
         init();

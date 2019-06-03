@@ -1,4 +1,4 @@
-package com.example.android006;
+package com.example.android006.Model;
 
 import java.io.Serializable;
 

@@ -1,28 +1,21 @@
-package com.example.android006;
+package com.example.android006.Main;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.android006.Model.HomeData;
-import com.google.gson.Gson;
+import com.example.android006.CustomAdapter;
+import com.example.android006.R;
+import com.example.android006.UserAccount;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
+
+import static com.example.android006.Ultils.Until.loadJSONFromAsset;
 
 public class HomeActivity extends AppCompatActivity {
     public static final String TAG="Android006";
@@ -33,15 +26,34 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        //init();
-        String strHomeData=loadJSONFromAsset();
+        setContentView( R.layout.activity_home);
+        init();
+        String strHomeData=loadJSONFromAsset(this);
+        try {
+            JSONObject jsonObject=new JSONObject(strHomeData);
+            JSONObject jsonResult = jsonObject.getJSONObject("result");
+            JSONArray jsonArrayNews = jsonResult.getJSONArray("listNews");
+            for(int i=0;i<jsonArrayNews.length();i++){
+                JSONObject jsonObjectList=jsonArrayNews.getJSONObject(i);
+                String urlImg=jsonObjectList.getString( "urlImage" );
+                String title=jsonObjectList.getString( "title" );
+                //goi lai mang
+                arrayList.add(new UserAccount(urlImg,title));
+            }
+            customAdapter.notifyDataSetChanged();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        /*
+        String strHomeData=loadJSONFromAsset(this);
         Gson gson=new Gson();
         HomeData homeData=gson.fromJson( strHomeData,HomeData.class );
         String customerName=homeData.getResult().getCustomerDetail().getCustomerName();
         String newsTitle=homeData.getResult().getListNews().get( 0 ).getTitle();
 
-        Toast.makeText( this, newsTitle, Toast.LENGTH_LONG ).show();
+        Toast.makeText( this, newsTitle, Toast.LENGTH_LONG ).show();*/
 
 
 
@@ -65,22 +77,6 @@ public class HomeActivity extends AppCompatActivity {
         UserAccount[] users = new UserAccount[]{tom,jerry, donald};
         ArrayAdapter<UserAccount> arrayAdapter = new ArrayAdapter<UserAccount>(this, android.R.layout.simple_list_item_1 , users);
         listView.setAdapter( arrayAdapter);*/
-        /*try {
-            JSONObject jsonObject=new JSONObject(data);
-            JSONObject jsonResult = jsonObject.getJSONObject("result");
-            JSONArray jsonArrayNews = jsonResult.getJSONArray("listNews");
-            for(int i=0;i<jsonArrayNews.length();i++){
-                JSONObject jsonObjectList=jsonArrayNews.getJSONObject(i);
-                String urlImg=jsonObjectList.getString( "urlImage" );
-                String title=jsonObjectList.getString( "title" );
-                //goi lai mang
-                arrayList.add(new UserAccount(urlImg,title));
-            }
-            customAdapter.notifyDataSetChanged();
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
 
 
     }
@@ -95,21 +91,7 @@ public class HomeActivity extends AppCompatActivity {
         customAdapter=new CustomAdapter( HomeActivity.this,arrayList);
         recyclerView.setAdapter( customAdapter );
     }
-    public String loadJSONFromAsset(){
-        String str=null;
-        try {
-            InputStream is=getAssets().open("home.json");
-            int size=is.available();
-            byte[] buffer=new byte[size];
-            is.read(buffer);
-            is.close();
-            str=new String(buffer,"UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return str;
-    }
+
     public  void innitView(){
         recyclerView=findViewById( R.id.recycler_view );
         recyclerView.setHasFixedSize( true );

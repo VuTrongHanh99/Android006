@@ -1,4 +1,4 @@
-package com.example.android006;
+package com.example.android006.Ultils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,8 +19,9 @@ public class AppConfig {
         SharedPreferences sharedPreferences=context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
         return sharedPreferences.getString("phone_number",null);
     }
-    public static void dangXuat(){
-
+    public static void dangXuat(Context context){
+        SharedPreferences sharedPreferences=context.getSharedPreferences( PREF_NAME,Context.MODE_PRIVATE );
+        sharedPreferences.edit().remove( "phone_number" ).apply();
     }
 
 }

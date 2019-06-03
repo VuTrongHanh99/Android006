@@ -1,4 +1,4 @@
-package com.example.android006;
+package com.example.android006.Auth;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +9,17 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.android006.Main.MainActivity;
+import com.example.android006.R;
+import com.example.android006.Ultils.AppConfig;
+import com.example.android006.Model.User;
+
 public class LoginActivity extends AppCompatActivity {
     EditText edtPhoneNumber;
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView( R.layout.activity_login);
         init();
 
 
@@ -31,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(checkValid()){
                     // chuyen man hinh
                     // tạo đối tượng intent
-                    Intent intent=new Intent( LoginActivity.this,MainActivity.class );
+                    Intent intent=new Intent( LoginActivity.this, MainActivity.class );
                     User user=new User();
                     //luu so dien thoai vao
                     AppConfig.setPhoneNumber(edtPhoneNumber.getText().toString(),LoginActivity.this);

@@ -1,4 +1,4 @@
-package com.example.android006;
+package com.example.android006.Auth;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,12 +6,16 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.android006.Main.MainActivity;
+import com.example.android006.R;
+import com.example.android006.Model.User;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView( R.layout.activity_splash);
         Handler handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -29,7 +33,7 @@ void screenRouter(){
         startActivity(intent);
     }
     else {
-        Intent intent=new Intent(this,MainActivity.class);
+        Intent intent=new Intent(this, MainActivity.class);
         User user=new User();
         user.setId(1);
         user.setPhoneNumber("+84123456789");
